@@ -11,7 +11,7 @@ def changePassword(request):
     sessionManager = SessionManager(request)
     if sessionManager.isLogouted():
         return HttpResponseRedirect(url_login)
-    if sessionManager.isAdministrator():
+    if sessionManager.isAdministrator():#如果是管理员
         return HttpResponseRedirect(url_index_logined)
     if request.method == 'POST':
         changePasswordForm = ChangePasswordForm(request.POST)

@@ -8,7 +8,7 @@ class CommonUsername(models.Model):
 
 
 class Customer(CommonUsername):  # 用户类（管理员和客户合并到同一个类，用authoritySignal区分）
-    authoritySignal = models.BooleanField(default=False)  # 身份标志，False为客户，True为管理员
+    authoritySignal = models.IntegerField(default=False)  # 身份标志，1为客户，2为教练，3为管理员
     password = models.CharField(max_length=20)  # 密码
 
     def checkAuthority(self, uncheckPassword):  # 身份认证函数，以后如果需要加入数据库内密码加密，可在该函数内添加加密解密函数
@@ -18,7 +18,13 @@ class Customer(CommonUsername):  # 用户类（管理员和客户合并到同一
             return False
 
     def isAdministrator(self):
-        if self.authoritySignal:
+        if self.authoritySignal==3:
+            return True
+        else:
+            return False
+
+    def isTrainer(self):
+        if self.authoritySignal==2:
             return True
         else:
             return False
@@ -273,7 +279,7 @@ class CourseUsedRecord(models.Model):  # 课程使用记录
     time = models.DateTimeField(auto_now=True)
 
 
-class Trainer(models.Model):  #教练
+class Trainer(CommonUsername):  #教练
     phoneNumber = models.CharField(max_length=20, default="")  # 电话号码
     name = models.CharField(max_length=20, default="")  # 教练姓名
     age = models.IntegerField(default=0, choices=AgeChoices)
@@ -284,3 +290,62 @@ class Trainer(models.Model):  #教练
     waistline = models.FloatField(default=0)#腰围
     hipline = models.FloatField(default=0)#臀围
     shoulderwidth = models.FloatField(default=0)#肩宽
+    def setPhoneNumber(self, p):
+        self.phoneNumber = p
+        self.save()
+    def getPhoneNumber(self):
+        return self.phoneNumber
+
+    def setName(self, p):
+        self.name = p
+        self.save()
+    def getName(self):
+        return self.name
+
+    def setAge(self, p):
+        self.age = p
+        self.save()
+    def getAge(self):
+        return self.age
+
+    def setSex(self, p):
+        self.sex = p
+        self.save()
+    def getSex(self):
+        return self.sex
+
+    def setHeight(self, p):
+        self.height = p
+        self.save()
+    def getHeight(self):
+        return self.height
+
+    def setWeight(self, p):
+        self.weight = p
+        self.save()
+    def getWeight(self):
+        return self.weight
+
+    def setBust(self, p):
+        self.bust = p
+        self.save()
+    def getBust(self):
+        return self.bust
+
+    def setWaistline(self, p):
+        self.waistline = p
+        self.save()
+    def getWaistline(self):
+        return self.waistline
+
+    def setHipline(self, p):
+        self.hipline = p
+        self.save()
+    def getHipline(self):
+        return self.hipline
+
+    def setShoulderwidth(self, p):
+        self.shoulderwidth = p
+        self.save()
+    def getShoulderwidth(self):
+        return self.shoulderwidth

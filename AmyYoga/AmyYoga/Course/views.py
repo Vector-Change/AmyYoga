@@ -8,11 +8,11 @@ from .forms import AddCourseForm, ModCourseForm
 
 def viewCourse(request):  # 查看课程信息
     sessionManager = SessionManager(request)
-    if sessionManager.isAdministrator(): #如果是管理员登陆
+    if sessionManager.isAdministrator():
         courses = Course.objects.all()  # 查询全部课程信息
         Authority = 'Admin'
 
-    else: #如果是客户登陆
+    else: #如果是用户或教练登陆
         courses = Course.objects.filter(course_flag=True)  # 查询在使用的课程信息
         Authority = 'Customer'
 
@@ -26,17 +26,20 @@ def viewCourseDetails(request, coursename):  # 显示课程的详细信息
         detailcourse = BuyRecord.objects.filter(coursename=coursename)  # 查询这个课程的所有订单（包括付钱和没付钱的）
         Authority = 'Admin'
 
-    else: #如果是客户登陆
+    else: #如果是客户或教练登录
         username = sessionManager.getUsername()  # 获取当前登录的用户名字
         courses = Course.objects.get(coursename=coursename)  # 查询当前课程信息,为了后面显示详细信息
-        detailcourse = BuyRecord.objects.filter(username=username,coursename=coursename)  # 查询这个用户关于这门课的订单状态（付钱和没付钱的）
-        Authority = 'Customer'
+        if sessionManager.isTrainer():#如果是教练
+            Authority ='Trainer'
+        else:
+            detailcourse = BuyRecord.objects.filter(username=username,coursename=coursename)  # 查询这个用户关于这门课的订单状态（付钱和没付钱的）
+            Authority = 'Customer'
     return render(request, 'detailmessageUI.html', {'Authority': Authority, 'courses':courses,'order1': detailcourse})
 
 
 def addCourse(request):  # 管理员增加课程信息
     sessionManager = SessionManager(request)
-    if not sessionManager.isAdministrator():
+    if not sessionManager.isAdministrator():#若为非管理员
         return HttpResponseRedirect(url_index)
     if request.method == 'POST':
         addcourseForm = AddCourseForm(request.POST)
@@ -55,7 +58,7 @@ def addCourse(request):  # 管理员增加课程信息
 
 def ModCourse(request, coursename):  # 修改课程信息界面
     sessionManager = SessionManager(request)
-    if not sessionManager.isAdministrator():
+    if not sessionManager.isAdministrator():#若为非管理员
         return HttpResponseRedirect(url_index)
     if request.method == 'POST':  # 如果请求为表单提交
         modcourseForm = ModCourseForm(request.POST)  # 获取表单内容
@@ -74,7 +77,7 @@ def ModCourse(request, coursename):  # 修改课程信息界面
 
 def DelCourse(request, coursename):  # 执行下架操作
     sessionManager = SessionManager(request)
-    if not sessionManager.isAdministrator():
+    if not sessionManager.isAdministrator():#若非管理员
         return HttpResponseRedirect(url_index)
     P = Course.objects.get(coursename=coursename)  # 先获取当前课程信息
     P.setCourseFlag(False)  # 下架课程
@@ -84,7 +87,7 @@ def DelCourse(request, coursename):  # 执行下架操作
 
 def reAddCourse(request, coursename):  # 执行重新上架操作
     sessionManager = SessionManager(request)
-    if not sessionManager.isAdministrator():
+    if not sessionManager.isAdministrator():#若非管理员
         return HttpResponseRedirect(url_index)
     P = Course.objects.get(coursename=coursename)  # 先获取当前课程信息
     P.setCourseFlag(True)  # 重新上架课程
