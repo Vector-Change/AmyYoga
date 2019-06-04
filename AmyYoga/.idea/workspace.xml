@@ -2,20 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="238fbbfc-5afb-4efc-8b8a-1316415cdb46" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/AmyYoga/Index/templates/TrainerIndex.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AmyYoga/CourseUsed/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/AmyYoga/CourseUsed/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AmyYoga/CustomerRegister/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/AmyYoga/CustomerRegister/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AmyYoga/CustomerRegister/templates/RegisterUI.html" beforeDir="false" afterPath="$PROJECT_DIR$/AmyYoga/CustomerRegister/templates/RegisterUI.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AmyYoga/CustomerRegister/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/AmyYoga/CustomerRegister/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AmyYoga/Database/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AmyYoga/Database/migrations/0002_buyrecord_price.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/AmyYoga/Database/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/AmyYoga/Database/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AmyYoga/PersonalInformation/templates/personalinformation.html" beforeDir="false" afterPath="$PROJECT_DIR$/AmyYoga/PersonalInformation/templates/personalinformation.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AmyYoga/PersonalInformation/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/AmyYoga/PersonalInformation/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AmyYoga/Index/templates/CustomerIndex.html" beforeDir="false" afterPath="$PROJECT_DIR$/AmyYoga/Index/templates/CustomerIndex.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AmyYoga/Index/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/AmyYoga/Index/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AmyYoga/PersonalInformation/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/AmyYoga/PersonalInformation/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AmyYoga/Tools/SessionManager.py" beforeDir="false" afterPath="$PROJECT_DIR$/AmyYoga/Tools/SessionManager.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AmyYoga/base_templates/logedbase.html" beforeDir="false" afterPath="$PROJECT_DIR$/AmyYoga/base_templates/logedbase.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AmyYoga/db.sqlite3" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,49 +21,50 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AmyYoga/Database/models.py">
+        <entry file="file://$PROJECT_DIR$/AmyYoga/base_templates/logedbase.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="99">
-              <caret line="67" column="27" selection-start-line="67" selection-start-column="27" selection-end-line="67" selection-end-column="27" />
+            <state relative-caret-position="368">
+              <caret line="158" column="8" lean-forward="true" selection-start-line="158" selection-start-column="8" selection-end-line="158" selection-end-column="8" />
               <folding>
-                <element signature="e#71#171#0" />
-                <element signature="e#251#921#0" />
-                <element signature="e#943#972#0" />
-                <element signature="e#1005#2407#0" />
-                <element signature="e#4859#5911#0" />
-                <element signature="e#5949#7402#0" />
-                <element signature="e#7457#7658#0" />
+                <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
+                <element signature="n#div#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#p#0;n#div#1;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#p#1;n#div#1;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#p#2;n#div#1;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#p#3;n#div#1;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#p#4;n#div#1;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#p#5;n#div#1;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#p#6;n#div#1;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#p#7;n#div#1;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#p#8;n#div#1;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#p#12;n#div#1;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#2;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#3;n#body#0;n#html#0;n#!!top" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AmyYoga/CustomerRegister/templates/RegisterUI.html">
+        <entry file="file://$PROJECT_DIR$/AmyYoga/PersonalInformation/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="13" column="66" lean-forward="true" selection-start-line="13" selection-start-column="66" selection-end-line="13" selection-end-column="66" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AmyYoga/CustomerRegister/forms.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="421">
-              <caret line="22" column="19" lean-forward="true" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
+            <state relative-caret-position="240">
+              <caret line="8" column="18" lean-forward="true" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
               <folding>
-                <element signature="e#0#24#0" expanded="true" />
+                <element signature="e#0#37#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/AmyYoga/CustomerRegister/views.py">
+        <entry file="file://$PROJECT_DIR$/AmyYoga/PersonalInformation/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="27" column="53" lean-forward="true" selection-start-line="27" selection-start-column="53" selection-end-line="27" selection-end-column="53" />
+            <state relative-caret-position="270">
+              <caret line="9" column="52" selection-start-line="9" selection-start-column="52" selection-end-line="9" selection-end-column="52" />
+              <folding>
+                <element signature="e#0#57#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -92,6 +88,7 @@
       <find>authoritySignal</find>
       <find>sex</find>
       <find>isAdministrator</find>
+      <find>adminurlpatterns</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -100,7 +97,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/AmyYoga/admin_CourseMessage/templates/modcourseUI.html" />
         <option value="$PROJECT_DIR$/AmyYoga/admin_CourseMessage/forms.py" />
         <option value="$PROJECT_DIR$/AmyYoga/admin_CourseMessage/views.py" />
         <option value="$PROJECT_DIR$/AmyYoga/UserLogin/urls.py" />
@@ -122,7 +118,6 @@
         <option value="$PROJECT_DIR$/AmyYoga/AmyYoga/urls.py" />
         <option value="$PROJECT_DIR$/AmyYoga/Purchase/urls.py" />
         <option value="$PROJECT_DIR$/AmyYoga/Index/templates/AdminIndex.html" />
-        <option value="$PROJECT_DIR$/AmyYoga/Index/templates/CustomerIndex.html" />
         <option value="$PROJECT_DIR$/AmyYoga/UserLogin/views.py" />
         <option value="$PROJECT_DIR$/AmyYoga/UserLogin/templates/loginUI.html" />
         <option value="$PROJECT_DIR$/AmyYoga/Course/templates/addcourseUI.html" />
@@ -132,7 +127,6 @@
         <option value="$PROJECT_DIR$/AmyYoga/data.json" />
         <option value="$PROJECT_DIR$/AmyYoga/Course/templates/modcourseUI.html" />
         <option value="$PROJECT_DIR$/AmyYoga/Course/templates/detailmessageUI.html" />
-        <option value="$PROJECT_DIR$/AmyYoga/Index/views.py" />
         <option value="$PROJECT_DIR$/AmyYoga/About/templates/course.html" />
         <option value="$PROJECT_DIR$/AmyYoga/About/views.py" />
         <option value="$PROJECT_DIR$/AmyYoga/Course/templates/coursemessageUI.html" />
@@ -141,21 +135,25 @@
         <option value="$PROJECT_DIR$/AmyYoga/Course/views.py" />
         <option value="$PROJECT_DIR$/AmyYoga/CourseUsed/views.py" />
         <option value="$PROJECT_DIR$/AmyYoga/CourseUsed/templates/TrainerCourseUsed.html" />
-        <option value="$PROJECT_DIR$/AmyYoga/PersonalInformation/views.py" />
         <option value="$PROJECT_DIR$/AmyYoga/Tools/SessionManager.py" />
         <option value="$PROJECT_DIR$/AmyYoga/CourseUsed/urls.py" />
-        <option value="$PROJECT_DIR$/AmyYoga/PersonalInformation/urls.py" />
-        <option value="$PROJECT_DIR$/AmyYoga/base_templates/logedbase.html" />
         <option value="$PROJECT_DIR$/AmyYoga/PersonalInformation/templates/personalinformation.html" />
+        <option value="$PROJECT_DIR$/AmyYoga/CustomerRegister/templates/RegisterUI.html" />
         <option value="$PROJECT_DIR$/AmyYoga/Database/models.py" />
         <option value="$PROJECT_DIR$/AmyYoga/CustomerRegister/forms.py" />
-        <option value="$PROJECT_DIR$/AmyYoga/CustomerRegister/templates/RegisterUI.html" />
         <option value="$PROJECT_DIR$/AmyYoga/CustomerRegister/views.py" />
+        <option value="$PROJECT_DIR$/AmyYoga/Index/templates/TrainerIndex.html" />
+        <option value="$PROJECT_DIR$/AmyYoga/Index/templates/CustomerIndex.html" />
+        <option value="$PROJECT_DIR$/AmyYoga/Index/views.py" />
+        <option value="$PROJECT_DIR$/AmyYoga/PersonalInformation/urls.py" />
+        <option value="$PROJECT_DIR$/AmyYoga/base_templates/logedbase.html" />
+        <option value="$PROJECT_DIR$/AmyYoga/PersonalInformation/views.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="683" />
+    <option name="x" value="510" />
+    <option name="y" value="-8" />
     <option name="width" value="683" />
     <option name="height" value="728" />
   </component>
@@ -209,6 +207,19 @@
               <item name="AmyYoga" type="b2602c69:ProjectViewProjectNode" />
               <item name="AmyYoga" type="462c0819:PsiDirectoryNode" />
               <item name="AmyYoga" type="462c0819:PsiDirectoryNode" />
+              <item name="Index" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AmyYoga" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AmyYoga" type="462c0819:PsiDirectoryNode" />
+              <item name="AmyYoga" type="462c0819:PsiDirectoryNode" />
+              <item name="Index" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AmyYoga" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AmyYoga" type="462c0819:PsiDirectoryNode" />
+              <item name="AmyYoga" type="462c0819:PsiDirectoryNode" />
               <item name="PersonalInformation" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -216,6 +227,26 @@
               <item name="AmyYoga" type="462c0819:PsiDirectoryNode" />
               <item name="AmyYoga" type="462c0819:PsiDirectoryNode" />
               <item name="PersonalInformation" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AmyYoga" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AmyYoga" type="462c0819:PsiDirectoryNode" />
+              <item name="AmyYoga" type="462c0819:PsiDirectoryNode" />
+              <item name="UserLogin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AmyYoga" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AmyYoga" type="462c0819:PsiDirectoryNode" />
+              <item name="AmyYoga" type="462c0819:PsiDirectoryNode" />
+              <item name="UserLogin" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AmyYoga" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AmyYoga" type="462c0819:PsiDirectoryNode" />
+              <item name="AmyYoga" type="462c0819:PsiDirectoryNode" />
+              <item name="UserLogin" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -342,7 +373,7 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17261904" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1592262" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -353,7 +384,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.3285968" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4980143" visible="true" weight="0.16885246" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4980143" visible="true" weight="0.16229509" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5019857" side_tool="true" weight="0.94671404" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.32459018" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -381,84 +412,6 @@
     </layout-to-restore>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/AmyYoga/Index/templates/Index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="19" column="10" lean-forward="true" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AmyYoga/Index/templates/AdminIndex.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AmyYoga/Index/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="44" lean-forward="true" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
-          <folding>
-            <element signature="e#0#44#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AmyYoga/CourseUsed/templates/CourseOpt.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AmyYoga/Course/templates/successfulUI.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AmyYoga/database.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-60">
-          <caret line="10" column="13" lean-forward="true" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AmyYoga/Course/templates/modcourseUI.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="26" column="6" selection-start-line="26" selection-start-column="6" selection-end-line="26" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AmyYoga/Course/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="13" column="47" lean-forward="true" selection-start-line="13" selection-start-column="47" selection-end-line="13" selection-end-column="47" />
-          <folding>
-            <element signature="e#0#24#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AmyYoga/About/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1">
-          <caret line="9" column="39" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AmyYoga/About/models.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AmyYoga/ChangePassword/templates/ChangePasswordUI.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="1" column="16" lean-forward="true" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/AmyYoga/ChangePassword/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="77">
@@ -575,16 +528,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AmyYoga/UserLogin/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-120">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-          <folding>
-            <element signature="e#0#57#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/AmyYoga/Tools/SessionManager.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="407">
@@ -597,33 +540,12 @@
         <state relative-caret-position="-1260" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AmyYoga/AmyYoga/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="33" column="41" lean-forward="true" selection-start-line="33" selection-start-column="41" selection-end-line="33" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/AmyYoga/Purchase/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="8" column="34" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
           <folding>
             <element signature="e#0#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AmyYoga/CourseUsed/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-330">
-          <caret line="10" column="23" lean-forward="true" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-            <element signature="e#2774#2965#0" />
-            <element signature="e#3019#3214#0" />
-            <element signature="e#3241#3320#0" />
-            <element signature="e#3354#3985#0" />
           </folding>
         </state>
       </provider>
@@ -637,39 +559,6 @@
           </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AmyYoga/PersonalInformation/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AmyYoga/base_templates/logedbase.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="143" column="8" lean-forward="true" selection-start-line="143" selection-start-column="8" selection-end-line="143" selection-end-column="8" />
-          <folding>
-            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
-            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#p#0;n#div#1;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#p#1;n#div#1;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#p#2;n#div#1;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#p#3;n#div#1;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#p#4;n#div#1;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#p#5;n#div#1;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#p#6;n#div#1;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#p#7;n#div#1;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#p#8;n#div#1;n#body#0;n#html#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AmyYoga/CustomerRegister/models.py">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/AmyYoga/PersonalInformation/tests.py">
       <provider selected="true" editor-type-id="text-editor" />
@@ -691,53 +580,186 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AmyYoga/CustomerRegister/templates/RegisterUI.html">
+    <entry file="file://$PROJECT_DIR$/AmyYoga/CourseUsed/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="13" column="66" lean-forward="true" selection-start-line="13" selection-start-column="66" selection-end-line="13" selection-end-column="66" />
+        <state relative-caret-position="300">
+          <caret line="31" column="54" lean-forward="true" selection-start-line="31" selection-start-column="27" selection-end-line="31" selection-end-column="54" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+            <element signature="e#2774#2965#0" />
+            <element signature="e#3019#3214#0" />
+            <element signature="e#3241#3320#0" />
+            <element signature="e#3354#3985#0" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AmyYoga/PersonalInformation/views.py">
+    <entry file="file://$PROJECT_DIR$/AmyYoga/About/templates/course.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AmyYoga/About/templates/location.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AmyYoga/About/templates/yoga.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AmyYoga/About/templates/teacherteam.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AmyYoga/Database/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="14" column="22" lean-forward="true" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+        <state relative-caret-position="240">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="e#251#921#0" />
+            <element signature="e#943#972#0" />
+            <element signature="e#1005#2407#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AmyYoga/CustomerRegister/templates/RegisterUI.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="8" column="24" lean-forward="true" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AmyYoga/UserLogin/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AmyYoga/UserLogin/templates/logined_mainUI.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="20" selection-start-column="20" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AmyYoga/UserLogin/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="23" column="36" lean-forward="true" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
           <folding>
             <element signature="e#0#57#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AmyYoga/Database/models.py">
+    <entry file="file://$PROJECT_DIR$/AmyYoga/UserLogin/templates/loginUI.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="67" column="27" selection-start-line="67" selection-start-column="27" selection-end-line="67" selection-end-column="27" />
+        <state relative-caret-position="540">
+          <caret line="18" column="19" lean-forward="true" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AmyYoga/Index/templates/TrainerIndex.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AmyYoga/Index/templates/CustomerIndex.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AmyYoga/Index/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="28" column="57" lean-forward="true" selection-start-line="28" selection-start-column="57" selection-end-line="28" selection-end-column="57" />
           <folding>
-            <element signature="e#71#171#0" />
-            <element signature="e#251#921#0" />
-            <element signature="e#943#972#0" />
-            <element signature="e#1005#2407#0" />
-            <element signature="e#4859#5911#0" />
-            <element signature="e#5949#7402#0" />
-            <element signature="e#7457#7658#0" />
+            <element signature="e#0#44#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/AmyYoga/Index/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AmyYoga/CustomerRegister/models.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/AmyYoga/CustomerRegister/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="22" column="19" lean-forward="true" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
+        <state relative-caret-position="510">
+          <caret line="59" column="47" lean-forward="true" selection-start-line="59" selection-start-column="47" selection-end-line="59" selection-end-column="47" />
           <folding>
             <element signature="e#0#24#0" expanded="true" />
+            <element signature="e#872#2326#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/AmyYoga/CustomerRegister/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="27" column="53" lean-forward="true" selection-start-line="27" selection-start-column="53" selection-end-line="27" selection-end-column="53" />
+        <state relative-caret-position="810">
+          <caret line="32" column="9" lean-forward="true" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AmyYoga/AmyYoga/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="33" column="43" selection-start-line="33" selection-start-column="43" selection-end-line="33" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AmyYoga/base_templates/logedbase.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="158" column="8" lean-forward="true" selection-start-line="158" selection-start-column="8" selection-end-line="158" selection-end-column="8" />
+          <folding>
+            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
+            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#p#0;n#div#1;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#p#1;n#div#1;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#p#2;n#div#1;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#p#3;n#div#1;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#p#4;n#div#1;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#p#5;n#div#1;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#p#6;n#div#1;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#p#7;n#div#1;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#p#8;n#div#1;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#p#12;n#div#1;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#2;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#3;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AmyYoga/PersonalInformation/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="8" column="18" lean-forward="true" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AmyYoga/PersonalInformation/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="9" column="52" selection-start-line="9" selection-start-column="52" selection-end-line="9" selection-end-column="52" />
+          <folding>
+            <element signature="e#0#57#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

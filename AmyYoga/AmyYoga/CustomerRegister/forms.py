@@ -56,3 +56,5 @@ class RegisterForm(forms.Form):  # 注册时输入的表单
         birthday = cleaned_data.get("birthday")
         if birthday is None:
             raise ValidationError("生日格式不正确")
+        #身份
+        identify = cleaned_data.get("identify")

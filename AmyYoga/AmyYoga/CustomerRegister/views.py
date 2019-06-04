@@ -17,13 +17,14 @@ def register(request):#用户注册
             password = registerForm.cleaned_data.get('password')
             phoneNumber = registerForm.cleaned_data.get('phoneNumber')
             birthday = registerForm.cleaned_data.get('birthday')
-            identity = registerForm.cleaned_data.get('identity')
+            identity = request.POST.get('identity')
 
             #Customer.objects.create(username=username, password=password)
             if identity == 'customer':
                 Customer.objects.create(username=username, password=password,authoritySignal=1)
             elif identity == 'trainer':
-                Customer.objects.create(username=username, password=password, authoritySignal=2)
+                Customer.objects.create(username=username, password=password,authoritySignal=2)
+
             personalInformation = PersonalInformation.objects.create(username=username)
             personalInformation.setIdentity(identity)
             personalInformation.setPhoneNumber(phoneNumber)

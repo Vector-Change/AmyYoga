@@ -21,6 +21,9 @@ def loginedIndex(request):  # 客户登陆过后显示的首界面
     if sessionManager.isAdministrator():
         Authority='Admin'
         return render(request, 'AdminIndex.html', {"Authority": Authority})  # 渲染页面，传递参数
+    elif sessionManager.isTrainer():
+        Authority='Trainer'
+        return render(request, 'TrainerIndex.html', {"Authority": Authority})  # 渲染页面，传递参数
     else:
         Authority='Customer'
         return render(request, 'CustomerIndex.html', {"Authority": Authority})  # 渲染页面，传递参数

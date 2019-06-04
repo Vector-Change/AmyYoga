@@ -7,7 +7,7 @@ from Tools.URLPath import url_index,url_index_logined
 
 def customerCompleteInformation(request):
     sessionManager = SessionManager(request)
-    if sessionManager.isAdministrator():  # 如果是管理员登陆
+    if sessionManager.isAdministrator():  # 如果是管理员登录
         Authority = 'Admin'
     else:
         if sessionManager.isTrainer():#教练登录

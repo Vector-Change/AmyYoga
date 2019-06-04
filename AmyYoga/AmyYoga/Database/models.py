@@ -65,7 +65,7 @@ AgeChoices = (
 
 
 class PersonalInformation(CommonUsername):  # 个人信息类
-    identity=models.CharField(max_length=20)#管理员、用户、教练
+    identity=models.CharField(max_length=20, default="")#管理员、用户、教练
     phoneNumber = models.CharField(max_length=20, default="")
     name = models.CharField(max_length=20, default="")
     age = models.IntegerField(default=0, choices=AgeChoices)
