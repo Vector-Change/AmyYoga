@@ -3,7 +3,6 @@ from django.db import models
 
 class CommonUsername(models.Model):
     username = models.CharField(primary_key=True, max_length=20)
-
     class Meta:
         abstract = True
 
@@ -272,3 +271,16 @@ class CourseUsedRecord(models.Model):  # 课程使用记录
     username = models.CharField(max_length=20)
     coursename = models.CharField(max_length=20)
     time = models.DateTimeField(auto_now=True)
+
+
+class Trainer(models.Model):  #教练
+    phoneNumber = models.CharField(max_length=20, default="")  # 电话号码
+    name = models.CharField(max_length=20, default="")  # 教练姓名
+    age = models.IntegerField(default=0, choices=AgeChoices)
+    sex = models.BooleanField(default=False, choices=SexChoices)
+    height = models.FloatField(default=0)#身高
+    weight = models.FloatField(default=0)#体重
+    bust = models.FloatField(default=0)#胸围
+    waistline = models.FloatField(default=0)#腰围
+    hipline = models.FloatField(default=0)#臀围
+    shoulderwidth = models.FloatField(default=0)#肩宽
