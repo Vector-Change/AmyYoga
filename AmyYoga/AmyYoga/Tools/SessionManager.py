@@ -44,5 +44,11 @@ class SessionManager:
             return user.isAdministrator()
         return False
 
+    def isTrainer(self):
+        username=self.session.get("Username",default=None)
+        if username is not None:
+            user=Customer.objects.get(username=username)
+            return user.isTrainer()
+
     def getUsername(self):
         return self.session.get('Username', default=None)

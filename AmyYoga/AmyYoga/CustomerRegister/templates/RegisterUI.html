@@ -8,6 +8,11 @@
 <div style="text-align:Center">
     <form method="POST">
         {%csrf_token%}
+        <p>
+            <label for="identity">类型：</label>
+            <input type="radio" name="identity" value="customer" checked>会员
+            <input type="radio" name="identity" value="trainer">教练
+        </p>
         {% for field in registerForm %}
         <div class="fieldWrapper">
             {{ field.label_tag }} {{ field }}

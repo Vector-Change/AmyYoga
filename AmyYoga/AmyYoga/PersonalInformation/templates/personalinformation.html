@@ -9,7 +9,7 @@
 {% endblock %}
 
 {% block content2 %}
-    {% if  Authority == 'Admin' %}
+    {% if  Authority == 'Admin' or Authority == 'Trainer'%}
         <table border="3" align="center">
         <caption>会员信息</caption>
         <thead>

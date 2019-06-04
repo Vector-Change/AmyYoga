@@ -8,4 +8,5 @@ adminurlpatterns = {
 urlpatterns = {
     path('customer/', customerCompleteInformation),
     path('admin/', include(adminurlpatterns)),
+    path('trainer/',include(adminurlpatterns))
 }

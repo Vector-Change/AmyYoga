@@ -3,17 +3,21 @@ from Database.models import Customer
 from django.core.exceptions import ValidationError, ObjectDoesNotExist
 
 
-class RegisterForm(forms.Form):  # 登录时输入的表单
+class RegisterForm(forms.Form):  # 注册时输入的表单
     username = forms.CharField(label='用户名', widget=forms.TextInput)  # 用户名框
     password = forms.CharField(label='密码', widget=forms.PasswordInput)  # 密码框
     confirmPassword = forms.CharField(label="确认密码", widget=forms.PasswordInput)
     phoneNumber = forms.CharField(label="手机号", widget=forms.TextInput)
     birthday = forms.DateField(label="生日", widget=forms.DateInput, input_formats=['%Y/%m/%d'],
                                help_text='例如：1998/03/13')
+    # identity=forms.ChoiceField(choices=((1,"会员"),(2,"教练"),),
+    #                            label='身份',
+    #                            initial=3,
+    #                            widget=forms.Choic)
 
     def clean(self):
         cleaned_data = super().clean()
-
+        #用户名
         username = cleaned_data.get('username')
         user = Customer()  # 创建空用户对象
         flag = True
@@ -23,7 +27,7 @@ class RegisterForm(forms.Form):  # 登录时输入的表单
             flag = False
         if flag:
             raise ValidationError("此用户名已存在")
-
+        #密码
         password = cleaned_data.get('password')
         if password is None:
             raise ValidationError("This Field is required")
@@ -40,15 +44,15 @@ class RegisterForm(forms.Form):  # 登录时输入的表单
         res = smallCharacter + bigCharacter + number
         if res < 2:
             raise ValidationError("密码格式不正确")
-
+        #第二遍密码
         confirmpassword = cleaned_data.get("confirmPassword")
         if password != confirmpassword:
             raise ValidationError("两次密码不一致")
-
+        #电话
         phonenumber = cleaned_data.get("phoneNumber")
         if len(phonenumber) != 11:
             raise ValidationError("电话号码长度不正确")
-
+        #生日格式
         birthday = cleaned_data.get("birthday")
         if birthday is None:
             raise ValidationError("生日格式不正确")

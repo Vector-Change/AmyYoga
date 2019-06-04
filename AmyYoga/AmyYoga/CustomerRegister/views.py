@@ -6,7 +6,7 @@ from Tools.SessionManager import SessionManager
 from Tools.URLPath import url_index_logined, url_login, url_index
 
 
-def register(request):
+def register(request):#用户注册
     sessionManager = SessionManager(request)
     if sessionManager.isLogined():
         return HttpResponseRedirect(url_index_logined)
@@ -17,8 +17,15 @@ def register(request):
             password = registerForm.cleaned_data.get('password')
             phoneNumber = registerForm.cleaned_data.get('phoneNumber')
             birthday = registerForm.cleaned_data.get('birthday')
-            Customer.objects.create(username=username, password=password)
+            identity = registerForm.cleaned_data.get('identity')
+
+            #Customer.objects.create(username=username, password=password)
+            if identity == 'customer':
+                Customer.objects.create(username=username, password=password,authoritySignal=1)
+            elif identity == 'trainer':
+                Customer.objects.create(username=username, password=password, authoritySignal=2)
             personalInformation = PersonalInformation.objects.create(username=username)
+            personalInformation.setIdentity(identity)
             personalInformation.setPhoneNumber(phoneNumber)
             personalInformation.setBirthday(birthday)
             return HttpResponseRedirect(url_login)
