@@ -6,7 +6,7 @@ adminurlpatterns = {
     path('<username>/', viewDetails),
 }
 urlpatterns = {
-    path('customer/', customerCompleteInformation),
+    path('vip_information/', vipInformation),
     path('admin/', include(adminurlpatterns)),
-    path('trainer/',include(adminurlpatterns))
+    path('complete/',completeInformation)
 }

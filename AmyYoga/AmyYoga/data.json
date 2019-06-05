@@ -3,8 +3,57 @@
     "model": "Database.Customer",
     "fields": {
       "username": "admin",
-      "authoritySignal": "True",
-      "password": "1604102"
+      "identitySignal": 3,
+      "password": "333"
+    }
+  },
+   {
+    "model": "Database.Customer",
+    "fields": {
+      "username": "111",
+      "identitySignal": 1,
+      "password": "111"
+    }
+  },
+   {
+    "model": "Database.Customer",
+    "fields": {
+      "username": "222",
+      "identitySignal": 2,
+      "password": "222"
+    }
+  },
+  {
+
+    "model": "Database.CourseUsedRecord",
+    "fields": {
+      "timeid": "2019041701010203040506",
+      "username": "001",
+      "coursename": "001"
+    }
+  },
+  {
+    "model": "Database.CourseUsedRecord",
+    "fields": {
+      "timeid": "2019041702",
+      "username": "001",
+      "coursename": "002"
+    }
+  },
+  {
+    "model": "Database.CourseUsedRecord",
+    "fields": {
+      "timeid": "2019041703",
+      "username": "002",
+      "coursename": "001"
+    }
+  },
+  {
+    "model": "Database.CourseUsedRecord",
+    "fields": {
+      "timeid": "2019041704",
+      "username": "002",
+      "coursename": "002"
     }
   },
   {
@@ -44,6 +93,7 @@
       "time":"2009-03-17 16:50:49.92",
       "pay_flag": "False",
       "valid": "True"
+
     }
   }
 ]

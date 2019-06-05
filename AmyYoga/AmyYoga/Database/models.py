@@ -8,7 +8,7 @@ class CommonUsername(models.Model):
 
 
 class Customer(CommonUsername):  # 用户类（管理员和客户合并到同一个类，用authoritySignal区分）
-    authoritySignal = models.IntegerField(default=1)  # 身份标志，1为客户，2为教练，3为管理员
+    identitySignal = models.IntegerField(default=1)  # 身份标志，1为客户，2为教练，3为管理员
     password = models.CharField(max_length=20)  # 密码
 
     def checkAuthority(self, uncheckPassword):  # 身份认证函数，以后如果需要加入数据库内密码加密，可在该函数内添加加密解密函数
@@ -18,13 +18,13 @@ class Customer(CommonUsername):  # 用户类（管理员和客户合并到同一
             return False
 
     def isAdministrator(self):
-        if self.authoritySignal==3:
+        if self.identitySignal==3:
             return True
         else:
             return False
 
     def isTrainer(self):
-        if self.authoritySignal==2:
+        if self.identitySignal==2:
             return True
         else:
             return False
@@ -268,7 +268,7 @@ class BuyRecord(models.Model):
 
 
 class CourseUsedRecord(models.Model):  # 课程使用记录
-    number = models.CharField(primary_key=True, max_length=50)
+    timeid = models.CharField(primary_key=True, max_length=50)
     username = models.CharField(max_length=20)
     coursename = models.CharField(max_length=20)
-    time = models.DateTimeField(auto_now=True)
+    # time=models.DateTimeField(auto_now=True, default=False)

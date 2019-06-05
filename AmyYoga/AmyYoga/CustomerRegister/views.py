@@ -21,9 +21,9 @@ def register(request):#用户注册
 
             #Customer.objects.create(username=username, password=password)
             if identity == 'customer':
-                Customer.objects.create(username=username, password=password,authoritySignal=1)
+                Customer.objects.create(username=username, password=password,identitySignal=1)
             elif identity == 'trainer':
-                Customer.objects.create(username=username, password=password,authoritySignal=2)
+                Customer.objects.create(username=username, password=password,identitySignal=2)
 
             personalInformation = PersonalInformation.objects.create(username=username)
             personalInformation.setIdentity(identity)
