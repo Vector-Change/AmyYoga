@@ -12,12 +12,12 @@ def viewCourse(request):  # 查看课程信息
         courses = Course.objects.all()  # 查询全部课程信息
         Authority = 'Admin'
 
+    elif sessionManager.isTrainer():
+        Authority = 'Trainer'
     else: #如果是用户或教练登陆
-        courses = Course.objects.filter(course_flag=True)  # 查询在使用的课程信息
         Authority = 'Customer'
-
+    courses = Course.objects.filter(course_flag=True)  # 查询在使用的课程信息
     return render(request, 'coursemessageUI.html', {'order': courses, 'Authority': Authority})
-
 
 def viewCourseDetails(request, coursename):  # 显示课程的详细信息
     sessionManager = SessionManager(request)
@@ -31,11 +31,13 @@ def viewCourseDetails(request, coursename):  # 显示课程的详细信息
         courses = Course.objects.get(coursename=coursename)  # 查询当前课程信息,为了后面显示详细信息
         if sessionManager.isTrainer():#如果是教练
             Authority ='Trainer'
-        else:
-            detailcourse = BuyRecord.objects.filter(username=username,coursename=coursename)  # 查询这个用户关于这门课的订单状态（付钱和没付钱的）
-            Authority = 'Customer'
-    return render(request, 'detailmessageUI.html', {'Authority': Authority, 'courses':courses,'order1': detailcourse})
 
+        else:
+            Authority = 'Customer'
+    detailcourse = BuyRecord.objects.filter(username=username, coursename=coursename)
+    # 查询这个用户关于这门课的订单状态（付钱和没付钱的）
+    return render(request, 'detailmessageUI.html', {'Authority': Authority, 'courses':courses,
+                                                    'order1': detailcourse})
 
 def addCourse(request):  # 管理员增加课程信息
     sessionManager = SessionManager(request)
@@ -55,7 +57,6 @@ def addCourse(request):  # 管理员增加课程信息
         Authority = 'Admin'
         return render(request, 'addcourseUI.html', locals())
 
-
 def ModCourse(request, coursename):  # 修改课程信息界面
     sessionManager = SessionManager(request)
     if not sessionManager.isAdministrator():#若为非管理员
@@ -74,7 +75,6 @@ def ModCourse(request, coursename):  # 修改课程信息界面
         modcourseForm = ModCourseForm(instance=r)  # 创建表单
         return render(request, 'modcourseUI.html', locals())
 
-
 def DelCourse(request, coursename):  # 执行下架操作
     sessionManager = SessionManager(request)
     if not sessionManager.isAdministrator():#若非管理员
@@ -83,7 +83,6 @@ def DelCourse(request, coursename):  # 执行下架操作
     P.setCourseFlag(False)  # 下架课程
     Authority = 'Admin'
     return render(request, 'successfulUI.html', locals())
-
 
 def reAddCourse(request, coursename):  # 执行重新上架操作
     sessionManager = SessionManager(request)
