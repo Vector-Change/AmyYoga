@@ -17,7 +17,7 @@
         课程名：
             <select name="coursename">
                 <option value="all" selected>all
-                {% for item in username_app %}
+                {% for item in allcourse %}
                     <option value="{{ item.coursename }}" >{{ item.coursename }}
                 {% endfor %}
             </select>

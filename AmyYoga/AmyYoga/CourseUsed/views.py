@@ -7,7 +7,7 @@ from django.core.exceptions import ValidationError
 from django.http import HttpResponseRedirect
 # Create your views here.
 def CourseUsed (request):
-    username_app=models.Course.objects.all()
+    allcourse=models.Course.objects.all()
     Authority = 'Admin'
     if request.method == 'POST':
         if request.POST.get('Submit'):#如果是Submit传来的请求
@@ -64,6 +64,7 @@ def fixformats(date):
 def UserCourseUsed(request):
     sessionManager = SessionManager(request)
     username = sessionManager.getUsername()
+    allcourse = models.Course.objects.all()
     Authority = 'Customer'
     if request.method == 'POST':
         coursename = request.POST.get('coursename')
@@ -75,7 +76,7 @@ def UserCourseUsed(request):
             used_times= models.CourseUsedRecord.objects.filter(username=username,coursename=coursename).count()
     return render(request, 'UserCourseUsedRecord.html',locals() )
 def TrainerCourseUsed(request):
-    username_app=models.Course.objects.all()
+    allcourse=models.Course.objects.all()
     Authority = 'Trainer'
     if request.method == 'POST':
         if request.POST.get('Submit'):#如果是Submit传来的请求

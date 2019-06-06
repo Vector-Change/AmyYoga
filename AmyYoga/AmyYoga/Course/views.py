@@ -34,7 +34,7 @@ def viewCourseDetails(request, coursename):  # 显示课程的详细信息
 
         else:
             Authority = 'Customer'
-    detailcourse = BuyRecord.objects.filter(username=username, coursename=coursename)
+        detailcourse = BuyRecord.objects.filter(username=username, coursename=coursename)
     # 查询这个用户关于这门课的订单状态（付钱和没付钱的）
     return render(request, 'detailmessageUI.html', {'Authority': Authority, 'courses':courses,
                                                     'order1': detailcourse})

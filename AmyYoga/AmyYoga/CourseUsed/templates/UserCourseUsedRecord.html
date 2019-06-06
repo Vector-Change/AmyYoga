@@ -15,9 +15,10 @@
         &nbsp;&nbsp;&nbsp;&nbsp;
         课程名：
             <select name="coursename">
-               <option value="all" >all
-               <option value="001" selected>course1
-               <option value="002" > course2
+                <option value="all" selected>all
+                {% for item in allcourse %}
+                    <option value="{{ item.coursename }}" >{{ item.coursename }}
+                {% endfor %}
             </select>
         &nbsp;&nbsp;
         <input type="submit" name="Submit" value="搜索">
