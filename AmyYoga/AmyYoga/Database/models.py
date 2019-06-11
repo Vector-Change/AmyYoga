@@ -281,7 +281,7 @@ class TrainerPublish(models.Model):  # 发布空闲时间段
     #bookdate=models.DateField()#空闲日期
     booktime=models.CharField(max_length=20)#空闲时段
     coursename = models.CharField(max_length=20)#课程名
-    customernumber=models.IntegerField(default = 0)#人数限制
+    customernumber=models.CharField(max_length=20)#人数限制
     # time=models.DateTimeField(auto_now=True, default=False)
 
 class BookRecord(models.Model):  # 预约记录

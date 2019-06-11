@@ -6,6 +6,7 @@ urlpatterns = {
     path('customer/',CustomerBook),
     path('trainerpublish/', TrainerPublish),
     path('trainerpublished/',TrainerPublished),
+    path('trainerpublished/mks/',delete),
     #path('<username>',views.moremessage_username),
     #path('<coursename>',views.moremessage_coursename),
 }

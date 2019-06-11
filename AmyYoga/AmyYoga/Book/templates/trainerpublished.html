@@ -8,11 +8,14 @@
     <title>教练时间安排</title>
 </head>
 <body>
+<br>
 <a href="/book/trainerpublish/">发布新时间</a>
 <a href="/book/trainerpublished/">已发布时间</a>
 <br>
 <br>
-
+{{ temp }}<br>
+姑苏城边，云深之间，钟灵毓秀初长成蓝家少年<br>
+闭花羞月，沉鱼落雁，路过沿街大姑娘看直了眼<br>
 <table border="2" align="center" width=80%>
     <caption>预约表</caption>
     <br>
@@ -28,10 +31,12 @@
     </tr>
     </thead>
 
+    <!--对应每一条记录建立一个新form-->
     {% for item in allpublish%}
     <form method="POST" action="mks/">
         {% csrf_token %}
     <div>
+        <input type="text" name="timeid" value="{{ item.timeid }}" hidden="hidden">
     <tr>
         <td><!--课程-->
             <input type="text" name="coursename" value="{{ item.coursename }}" readonly="true">

@@ -8,20 +8,23 @@
     <title>教练时间安排</title>
 </head>
 <body>
+<br>
+{{ trainername }},我永远喜欢蓝忘机！
+<br>
+
 <a href="/book/trainerpublish/">发布新时间</a>
 <a href="/book/trainerpublished/">已发布时间</a>
 <br>
-<br>
+<form id="newpublish" action="" method="POST" >{% csrf_token %}
 日期<input type="text" name="date" value="20190610" size="20">
 <br>
 课程<select name="coursename">
-        <option value="all" selected>all
         {% for item in allcourse %}
             <option value="{{ item.coursename }}" >{{ item.coursename }}
         {% endfor %}
     </select>
 <br>
-最大人数<input type="text" name="maxnumber" value="5" size="15">
+最大人数<input type="number" name="maxnumber" value="5" size="15">
 <br>
 <p>
     <label for="time">时段</label>
@@ -32,7 +35,7 @@
 <br>
 <br>
 <input type="submit" value="确认发布">
-
+</form>
 </body>
 </html>
 {% endblock %}

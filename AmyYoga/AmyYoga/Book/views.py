@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.http import HttpResponseRedirect, HttpResponse
 from Database import models
 import datetime
 from Tools.SessionManager import SessionManager
@@ -62,17 +63,46 @@ def TrainerPublish (request):
         bookdate = request.POST.get('date')
         booktime=request.POST.get('time')
         coursename=request.POST.get('coursename')
-        customernumber = request.POST.get('maxnumber')  # 人数限制
-        timeid = bookdate+booktime+trainername+coursename+customernumber# id关键字
-        models.TrainerPublish.objects.create(timeid=timeid, username=trainername,
+        customernumber = request.POST.get('maxnumber')# 人数限制
+
+        #生成id
+        year = datetime.datetime.now().year
+        month = datetime.datetime.now().month
+        day = datetime.datetime.now().day
+        hour = datetime.datetime.now().hour
+        minute = datetime.datetime.now().minute
+        second = datetime.datetime.now().second
+        microsecond = datetime.datetime.now().microsecond
+        timeid = str(year) + fixformats(month) + fixformats(day) + fixformats(hour) \
+                 + fixformats(minute) + fixformats(second)
+
+        models.TrainerPublish.objects.create(timeid=timeid, trainername=trainername,
                                              coursename=coursename,bookdate=bookdate,
                                              booktime=booktime,customernumber=customernumber)
     return render(request, 'trainerpublish.html', locals())
+def fixformats(date):
+    if date//10==0:
+        return '0'+str(date)
+    else:
+        return str(date)
 def TrainerPublished (request):
     Authority = 'Trainer'
     sessionManager = SessionManager(request)
     trainername = sessionManager.getUsername()
-    allpublish=models.TrainerPublish.objects.filter(trainername=trainername)#本教练当前所有发布
+    allpublish = models.TrainerPublish.objects.all()
+    #allpublish=models.TrainerPublish.objects.filter(trainername=trainername)#本教练当前所有发布
+    temp=allpublish.count()
     #allbooked=models.TrainerPublish.objects.filter(trainername=trainername)#本教练本课本时段的预约人数
     #number=models.TrainerPublish.objects.filter(trainername=trainername).count()
     return render(request, 'trainerpublished.html', locals())
+
+
+def delete (request):
+    if request.method == 'POST':
+        timeid = request.POST.get('timeid')
+        print(timeid)
+        if timeid:
+            models.TrainerPublish.objects.get(timeid=timeid).delete()
+            return HttpResponse("删除成功")
+    return HttpResponse("删除失败")
+    #return render(request, 'trainerpublished.html', locals())
