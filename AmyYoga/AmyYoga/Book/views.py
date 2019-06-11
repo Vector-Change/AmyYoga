@@ -70,5 +70,9 @@ def TrainerPublish (request):
     return render(request, 'trainerpublish.html', locals())
 def TrainerPublished (request):
     Authority = 'Trainer'
-    allpublish=models.TrainerPublish.objects.all()
+    sessionManager = SessionManager(request)
+    trainername = sessionManager.getUsername()
+    allpublish=models.TrainerPublish.objects.filter(trainername=trainername)#本教练当前所有发布
+    #allbooked=models.TrainerPublish.objects.filter(trainername=trainername)#本教练本课本时段的预约人数
+    #number=models.TrainerPublish.objects.filter(trainername=trainername).count()
     return render(request, 'trainerpublished.html', locals())

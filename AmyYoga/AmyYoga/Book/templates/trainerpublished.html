@@ -27,30 +27,34 @@
         <th>操作</th>
     </tr>
     </thead>
+
+    {% for item in allpublish%}
+    <form method="POST" action="mks/">
+        {% csrf_token %}
+    <div>
+    <tr>
+        <td><!--课程-->
+            <input type="text" name="coursename" value="{{ item.coursename }}" readonly="true">
+        </td>
+        <td><!--日期-->
+            <input type="text" name="bookdate" value="{{ item.bookdate }}" readonly="true">
+        </td>
+        <td><!--时段-->
+            <input type="text" name="booktime" value="{{ item.booktime }}" readonly="true">
+        </td>
+        <td><!--预约人数 待更改-->
+            <input type="text" name="bookednumber" value="{{ item.customernumber }}" readonly="true">
+        </td>
+        <td><!--课程价格 待更改-->50</td>
+        <td><!--预计收入 待更改-->100</td>
+        <td><!--操作-->
+            <input type="submit" name="delete" value="删除"></td>
+    </tr>
+    </div>
+    </form>
+    {% endfor %}
+
 </table>
-
-
-日期<input type="text" name="date" value="20190610" size="20">
-<br>
-课程<select name="coursename">
-        <option value="all" selected>all
-        {% for item in allcourse %}
-            <option value="{{ item.coursename }}" >{{ item.coursename }}
-        {% endfor %}
-    </select>
-<br>
-最大人数<input type="text" name="maxnumber" value="5" size="15">
-<br>
-<p>
-    <label for="time">时段</label>
-    <input type="radio" name="time" value="morning" checked>9:00-11:00
-    <input type="radio" name="time" value="afternoon">15:00-17:00
-    <input type="radio" name="time" value="evening">19:00-21:00
-</p>
-<br>
-<br>
-<input type="submit" value="确认发布">
-
 </body>
 </html>
 {% endblock %}
