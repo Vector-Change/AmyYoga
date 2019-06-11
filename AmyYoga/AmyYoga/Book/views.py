@@ -9,6 +9,7 @@ from django.contrib import messages
 def CustomerBook (request):
     courselist=models.Course.objects.all()
     trainerlist=models.Customer.objects.filter(identitySignal=2)
+    datelist=models.TrainerPublish.objects.values('bookdate').distinct()
     Authority = 'Customer'
     # if request.method == 'POST':
     #     if request.POST.get('Submit'):#如果是Submit传来的请求
@@ -49,11 +50,9 @@ def CustomerBook (request):
     #                 models.CourseUsedRecord.objects.create(timeid=timeid, username=username, coursename=course_name)
     #                 return render(request, 'CourseUsed.html', locals())
     return render(request, 'customerbook.html', locals())
-
 def ManagerBook (request):
     Authority = 'Admin'
     return render(request, 'managerbook.html', locals())
-
 def TrainerPublish (request):
     allcourse=models.Course.objects.all()
     Authority = 'Trainer'
@@ -95,8 +94,6 @@ def TrainerPublished (request):
     #allbooked=models.TrainerPublish.objects.filter(trainername=trainername)#本教练本课本时段的预约人数
     #number=models.TrainerPublish.objects.filter(trainername=trainername).count()
     return render(request, 'trainerpublished.html', locals())
-
-
 def delete (request):
     if request.method == 'POST':
         timeid = request.POST.get('timeid')

@@ -11,19 +11,19 @@
     <form id="customer_book" action="" method="POST" >{% csrf_token %}
         <br>
         <br>
-        教练：
-            <select name="trainer">
-                <option value="all" selected>all
-                {% for item in trainerlist %}
-                    <option value="{{ item.username }}" >{{ item.username }}
-                {% endfor %}
-            </select>
-        &nbsp;&nbsp;&nbsp;&nbsp;
         课程：
             <select name="coursename">
                 <option value="all" selected>all
                 {% for item in courselist %}
                     <option value="{{ item.coursename }}" >{{ item.coursename }}
+                {% endfor %}
+            </select>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        教练：
+            <select name="trainer">
+                <option value="all" selected>all
+                {% for item in trainerlist %}
+                    <option value="{{ item.username }}" >{{ item.username }}
                 {% endfor %}
             </select>
         &nbsp;&nbsp;&nbsp;&nbsp;
@@ -36,11 +36,11 @@
             </select>
         &nbsp;&nbsp;&nbsp;&nbsp;
         时段：
-             <select name="time">
+            <select name="date">
                 <option value="all" selected>all
-                {% for item in timelist %}
-                    <option value="{{ item.booktime }}" >{{ item.booktime }}
-                {% endfor %}
+                <option value="morning" >9:00-11:00
+                <option value="afternoon" >15:00-17:00
+                <option value="evening" >19:00-21:00
             </select>
         &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
         <input type="submit" name="Submit" value="搜索">
