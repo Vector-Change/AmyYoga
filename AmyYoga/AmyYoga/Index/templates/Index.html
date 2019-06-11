@@ -1,12 +1,12 @@
 {%extends 'logedbase.html' %}
-{% block title %}AmyYoga首页{% endblock %}
+{% block title %}首页{% endblock %}
 
 {% block content %}<!--页面上方部分，存放AmyYoga的Logo-->
 
     {% if status == 'LOGIN' %}
     <div align="right">
         <a href="/login/logout/">
-            <button>退出</button>
+            <button>退出登录</button>
         </a>
     </div>
 
@@ -15,7 +15,7 @@
         <a href="/register/">
             <button>注册</button>
         </a> <a href="/login/">
-        <button>登陆</button>
+        <button>登录</button>
     </a>
     </div>
     {% endif %}

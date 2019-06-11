@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+{% extends 'logedbase.html' %}
+{% block title %}教练预约{% endblock %}
+{% block content2 %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>教练时间安排</title>
+</head>
+<body>
+<a href="/book/trainerpublish/">发布新时间</a>
+<a href="/book/trainerpublished/">已发布时间</a>
+<br>
+<br>
+
+<table border="2" align="center" width=80%>
+    <caption>预约表</caption>
+    <br>
+    <thead>
+    <tr>
+        <th>课程</th>
+        <th>日期</th>
+        <th>时段</th>
+        <th>预约人数</th>
+        <th>价格</th>
+        <th>预计收入</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+</table>
+
+
+日期<input type="text" name="date" value="20190610" size="20">
+<br>
+课程<select name="coursename">
+        <option value="all" selected>all
+        {% for item in allcourse %}
+            <option value="{{ item.coursename }}" >{{ item.coursename }}
+        {% endfor %}
+    </select>
+<br>
+最大人数<input type="text" name="maxnumber" value="5" size="15">
+<br>
+<p>
+    <label for="time">时段</label>
+    <input type="radio" name="time" value="morning" checked>9:00-11:00
+    <input type="radio" name="time" value="afternoon">15:00-17:00
+    <input type="radio" name="time" value="evening">19:00-21:00
+</p>
+<br>
+<br>
+<input type="submit" value="确认发布">
+
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+{% extends 'logedbase.html' %}
+{% block title %}用户预约{% endblock %}
+{% block content2 %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>客户预约</title>
+</head>
+<body>
+    <form id="customer_book" action="" method="POST" >{% csrf_token %}
+        <br>
+        <br>
+        教练：
+            <select name="trainer">
+                <option value="all" selected>all
+                {% for item in trainerlist %}
+                    <option value="{{ item.username }}" >{{ item.username }}
+                {% endfor %}
+            </select>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        课程：
+            <select name="coursename">
+                <option value="all" selected>all
+                {% for item in courselist %}
+                    <option value="{{ item.coursename }}" >{{ item.coursename }}
+                {% endfor %}
+            </select>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        日期：
+             <select name="date">
+                <option value="all" selected>all
+                {% for item in datelist %}
+                    <option value="{{ item.bookdate }}" >{{ item.bookdate }}
+                {% endfor %}
+            </select>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        时段：
+             <select name="time">
+                <option value="all" selected>all
+                {% for item in timelist %}
+                    <option value="{{ item.booktime }}" >{{ item.booktime }}
+                {% endfor %}
+            </select>
+        &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="submit" name="Submit" value="搜索">
+    </form>
+    {% if messages %}
+        <script>
+            {% for msg in messages %}
+                alert('{{ msg.message }}');
+            {% endfor %}
+        </script>
+    {% endif %}
+</body>
+<br>
+<br>
+------------------------------------------------------------------------------------
+<br>
+<br>
+<table>
+
+    <tr>
+        <td>上课记录</td>
+        <td>会员名</td>
+        <td>课程名</td>
+    </tr>
+    {% for item in user_list  %}
+    <tr>
+        <td>{{ item.timeid }} </td>
+        <td>{{ item.username }}</td>
+        <td>{{ item.coursename }}</td>
+        <!--
+        <td><a href="{{item.username}}">
+            {{ item.username }}</a></td>
+        <td><a href="{{item.coursename}}">
+            {{ item.coursename }}</a></td>
+        -->
+    </tr>
+    {% endfor %}
+</table>
+<body>
+    {% if used_times > 0 %}
+        已上课次数：{{used_times}}
+    {% endif %}
+</body>
+
+</html>
+{% endblock %}

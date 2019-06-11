@@ -15,7 +15,6 @@ def purchaseCourse(request):
     course_list = Course.objects.filter(course_flag=True)
     return render(request, 'purchaseCourse.html', {"Authority": Authority,'course_list':course_list})
 
-
 def purchase(request):
     sessionManager=SessionManager(request)
     if sessionManager.isLogouted():
@@ -41,7 +40,6 @@ def purchase(request):
             return HttpResponse("添加成功")
     return HttpResponse("添加失败")
 
-
 def showtherecord(request):
     sessionManager=SessionManager(request)
     if sessionManager.isLogouted():
@@ -53,7 +51,6 @@ def showtherecord(request):
     iterable = 'True'           #record_list是否可以迭代
     record_list = BuyRecord.objects.filter(valid=True)
     return render(request, 'showrecord.html', {"Authority": Authority,'record_list':record_list,'localflag':localflag,'iterable':iterable})
-
 
 def detailrecord(request, recordid):
     sessionManager=SessionManager(request)
@@ -67,7 +64,6 @@ def detailrecord(request, recordid):
     record_list = BuyRecord.objects.get(number=recordid)
     return render(request, 'showrecord.html',{"Authority": Authority,'item':record_list,"localflag": localflag,'iterable':iterable} )
 
-
 def makerecord(request, cord):
     sessionManager=SessionManager(request)
     if sessionManager.isLogouted():
@@ -80,7 +76,6 @@ def makerecord(request, cord):
     localflag = 'False'
     iterable = 'False'
     return render(request, 'showrecord.html', {"Authority": Authority,'item':item,'localflag':localflag,'iterable':iterable})
-
 
 def canclerecord(request, discord):
     sessionManager = SessionManager(request)
@@ -119,7 +114,6 @@ def buycourse(request):
     Authority = 'Admin'
     return render(request, 'buycourserightnow.html', {"Authority": Authority,'temp':temp})
 
-
 def makebuycourse(request):
     if request.method == 'POST':
         temp=CourseForm(request.POST)
@@ -144,7 +138,6 @@ def makebuycourse(request):
     else:
         return HttpResponseRedirect(url_index_logined)
 
-
 def customercourse(request):  # 向页面输出当前用户已支付的订单信息
     sessionManager = SessionManager(request)
     username = sessionManager.getUsername()  # 获取当前登录的用户名字
@@ -152,13 +145,11 @@ def customercourse(request):  # 向页面输出当前用户已支付的订单信
     Authority = 'Customer'
     return render(request, 'customercourseUI.html', {'order': user,'Authority' : Authority})  # 渲染页面 按照课程名排序
 
-
 def uncustomercourse(request):  # 向页面输出当前用户未支付的订单信息
     username = SessionManager.getUsername(request)  # 获取当前登录的用户名字
     user = BuyRecord.objects.filter(username=username, pay_flag=False, valid=True)  # 获取当前用户未支付的课程信息
     Authority = 'Customer'
     return render(request, 'uncustomercourseUI.html', {'order': user, 'Authority': Authority})  # 渲染页面 按照课程名排序
-
 
 def cancelorder(request, number):  # 取消订单
     username = SessionManager.getUsername(request)  # 获取当前登录的用户名字

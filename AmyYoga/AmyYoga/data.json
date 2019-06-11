@@ -4,23 +4,7 @@
     "fields": {
       "username": "admin",
       "identitySignal": 3,
-      "password": "333"
-    }
-  },
-   {
-    "model": "Database.Customer",
-    "fields": {
-      "username": "111",
-      "identitySignal": 1,
       "password": "111"
-    }
-  },
-   {
-    "model": "Database.Customer",
-    "fields": {
-      "username": "222",
-      "identitySignal": 2,
-      "password": "222"
     }
   },
   {
@@ -80,7 +64,7 @@
       "coursename": "003",
       "courseintroduction": "三号课程是个好课程",
       "courseprice": "6900",
-      "course_flag":"False"
+      "course_flag":"True"
     }
   },
   {
