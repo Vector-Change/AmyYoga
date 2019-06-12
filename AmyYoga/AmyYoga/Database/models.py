@@ -282,14 +282,15 @@ class TrainerPublish(models.Model):  # 发布空闲时间段
     booktime=models.CharField(max_length=20)#空闲时段
     coursename = models.CharField(max_length=20)#课程名
     customernumber=models.CharField(max_length=20)#人数限制
+    nownumber=models.CharField(max_length=20)#当前人数
     # time=models.DateTimeField(auto_now=True, default=False)
 
 class BookRecord(models.Model):  # 预约记录
     timeid = models.CharField(primary_key=True, max_length=50)
     trainername=models.CharField(max_length=20)
     username = models.CharField(max_length=20)
-    bookdate=models.DateField()
+    bookdate=models.CharField(max_length=20)
     booktime=models.CharField(max_length=20)
     coursename = models.CharField(max_length=20)
-    trainerprice=models.IntegerField(default=0)
+    trainerprice=models.CharField(max_length=20)
     # time=models.DateTimeField(auto_now=True, default=False)

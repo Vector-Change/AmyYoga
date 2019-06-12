@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+{% extends 'logedbase.html' %}
+{% block title %}用户预约{% endblock %}
+{% block content2 %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>预约记录</title>
+</head>
+<br>
+<a href="/book/customerbook/">查看可预约时间</a>
+<a href="/book/customerbooked/">查看个人的预约</a>
+<br>
+<body>
+    {{username}}，云深不知处<br>
+   <table border="2" align="center" width=80%>
+    <caption>预约表</caption>
+    <br>
+    <thead>
+    <tr>
+        <th>课程</th>
+        <th>教练</th>
+        <th>日期</th>
+        <th>时段</th>
+        <!--<th>预约人数</th>-->
+        <!--<th>最大人数</th>-->
+        <th>操作</th>
+    </tr>
+    </thead>
+
+    <!--对应每一条记录建立一个新form-->
+    {% for item in allbook%}
+    <form method="POST" action="mks/">
+        {% csrf_token %}
+    <div>
+        <input type="text" name="timeid" value="{{ item.timeid }}" hidden="hidden">
+    <tr>
+        <td><!--课程-->
+            <input type="text" name="coursename" value="{{ item.coursename }}" readonly="true">
+        </td>
+        <td><!--教练-->
+            <input type="text" name="trainername" value="{{ item.trainername }}" readonly="true">
+        </td>
+        <td><!--日期-->
+            <input type="text" name="bookdate" value="{{ item.bookdate }}" readonly="true">
+        </td>
+        <td><!--时段-->
+            <input type="text" name="booktime" value="{{ item.booktime }}" readonly="true">
+        </td>
+        <!--<td>&lt;!&ndash;预约人数 待更改&ndash;&gt;2</td>-->
+        <!--<td>&lt;!&ndash;最大人数 待更改&ndash;&gt;5</td>-->
+        <td><!--操作-->
+            <input type="submit" name="delete" value="删除"></td>
+    </tr>
+    </div>
+    </form>
+    {% endfor %}
+
+</table>
+</body>
+</html>
+{% endblock %}

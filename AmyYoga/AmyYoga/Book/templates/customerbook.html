@@ -7,6 +7,10 @@
     <meta charset="UTF-8">
     <title>客户预约</title>
 </head>
+<br>
+<a href="/book/customerbook/">查看可预约时间</a>
+<a href="/book/customerbooked/">查看个人的预约</a>
+<br>
 <body>
     <form id="customer_book" action="" method="POST" >{% csrf_token %}
         <br>
@@ -36,14 +40,14 @@
             </select>
         &nbsp;&nbsp;&nbsp;&nbsp;
         时段：
-            <select name="date">
+            <select name="time">
                 <option value="all" selected>all
-                <option value="morning" >9:00-11:00
-                <option value="afternoon" >15:00-17:00
-                <option value="evening" >19:00-21:00
+                <option value="09:00-11:00" >09:00-11:00
+                <option value="15:00-17:00" >15:00-17:00
+                <option value="19:00-21:00" >19:00-21:00
             </select>
         &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="submit" name="Submit" value="搜索">
+        <input type="submit" name="search" value="搜索">
     </form>
     {% if messages %}
         <script>
@@ -54,36 +58,39 @@
     {% endif %}
 </body>
 <br>
-<br>
 ------------------------------------------------------------------------------------
 <br>
-<br>
-<table>
-
+<table border="2" align="center" width=80%>
+    <caption>预约表</caption>
+    <br>
+    <thead>
     <tr>
-        <td>上课记录</td>
-        <td>会员名</td>
-        <td>课程名</td>
+        <td>课程</td>
+        <td>教练</td>
+        <td>日期</td>
+        <td>时段</td>
+        <td>最大人数</td>
+        <td>预约人数</td><!--应该是当前报名人数-->
+        <td>操作</td>
     </tr>
-    {% for item in user_list  %}
+    </thead>
+    {% for item in publishlist  %}
+    <form method="POST" action="mks/">{% csrf_token %}
     <tr>
-        <td>{{ item.timeid }} </td>
-        <td>{{ item.username }}</td>
-        <td>{{ item.coursename }}</td>
-        <!--
-        <td><a href="{{item.username}}">
-            {{ item.username }}</a></td>
-        <td><a href="{{item.coursename}}">
-            {{ item.coursename }}</a></td>
-        -->
+        <td><input type="text" name="coursename" value="{{ item.coursename }}" readonly="true"> </td>
+        <td><input type="text" name="trainername" value="{{ item.trainername }}" readonly="true"></td>
+        <td><input type="text" name="bookdate" value="{{ item.bookdate }}" readonly="true"></td>
+        <td><input type="text" name="booktime" value="{{ item.booktime }}" readonly="true"> </td>
+        <td><input type="text" name="customernumber" value="{{ item.customernumber }}" readonly="true"></td>
+        <td><input type="text" name="nownumber" value="{{ item.nownumber }}" readonly="true"></td>
+        <td><input type="submit" name="book" value="预约"></td>
+        <!--<td><a href="{{item.username}}">-->
+            <!--{{ item.username }}</a></td>-->
+        <!--<td><a href="{{item.coursename}}">-->
+            <!--{{ item.coursename }}</a></td>-->
     </tr>
+    </form>
     {% endfor %}
 </table>
-<body>
-    {% if used_times > 0 %}
-        已上课次数：{{used_times}}
-    {% endif %}
-</body>
-
 </html>
 {% endblock %}
