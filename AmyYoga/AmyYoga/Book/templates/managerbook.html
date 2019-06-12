@@ -1,12 +1,86 @@
 <!DOCTYPE html>
 {% extends 'logedbase.html' %}
 {% block title %}管理员{% endblock %}
+{% block content2 %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>预约情况</title>
 </head>
 <body>
+<!--教练发布表-->
+<table border="2" align="center" width=80%>
+    <caption>教练时间表</caption>
+    <br>
+    <thead>
+    <tr>
+        <th>教练</th>
+        <th>课程</th>
+        <th>日期</th>
+        <th>时段</th>
+    </tr>
+    </thead>
+    <!--对应每一条记录建立一个新form-->
+    {% for item in allpublish%}
+        {% csrf_token %}
+    <div>
+    <tr>
+        <td><!--教练-->
+            {{ item.trainername }}
+        </td>
+        <td><!--课程-->
+            {{ item.coursename }}
+        </td>
+        <td><!--日期-->
+            {{ item.bookdate }}
+        </td>
+        <td><!--时段-->
+            {{ item.booktime }}
+        </td>
+    </tr>
+    </div>
+    </form>
+    {% endfor %}
+</table>
+<!--用户预约表-->
+<table border="2" align="center" width=80%>
+    <caption>用户预约表</caption>
+    <br>
+    <thead>
+    <tr>
+        <th>用户</th>
+        <th>课程</th>
+        <th>教练</th>
+        <th>日期</th>
+        <th>时段</th>
+    </tr>
+    </thead>
+    {% for item in allbook%}
+    {% csrf_token %}
+    <div>
+    <tr>
+        <td><!--用户-->
+            {{ item.username }}
+        </td>
+        <td><!--课程-->
+            {{ item.coursename }}
+        </td>
+        <td><!--教练-->
+            {{ item.trainername }}
+        </td>
+        <td><!--日期-->
+            {{ item.bookdate }}
+        </td>
+        <td><!--时段-->
+            {{ item.booktime }}
+        </td>
+        <!--<td>&lt;!&ndash;预约人数 待更改&ndash;&gt;2</td>-->
+        <!--<td>&lt;!&ndash;最大人数 待更改&ndash;&gt;5</td>-->
+    </tr>
+    </div>
+    {% endfor %}
+</table>
 
 </body>
 </html>
+{% endblock %}

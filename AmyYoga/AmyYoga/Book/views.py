@@ -111,6 +111,8 @@ def CustomerDelete (request):
     #return render(request, 'trainerpublished.html', locals())
 def ManagerBook (request):
     Authority = 'Admin'
+    allbook = models.BookRecord.objects.all().order_by('username')
+    allpublish = models.TrainerPublish.objects.all().order_by('trainername')
     return render(request, 'managerbook.html', locals())
 def TrainerPublish (request):
     allcourse=models.Course.objects.all()
