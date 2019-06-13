@@ -8,8 +8,9 @@
     <title>客户预约</title>
 </head>
 <br>
-<a href="/book/customerbook/">查看可预约时间</a>
-<a href="/book/customerbooked/">查看个人的预约</a>
+<a href="/book/customerbook/">可预约时间</a>
+<a href="/book/customerbooked/">未完成预约</a>
+<a href="/book/customerbookedall/">所有预约</a>
 <br>
 <body>
     <form id="customer_book" action="" method="POST" >{% csrf_token %}
@@ -17,8 +18,8 @@
         <br>
         课程：
             <select name="coursename">
-                <option value="all" selected>all
-                {% for item in courselist %}
+                <!--<option value="all" selected>all-->
+                {% for item in buycourse %}
                     <option value="{{ item.coursename }}" >{{ item.coursename }}
                 {% endfor %}
             </select>
@@ -74,7 +75,7 @@
         <td>操作</td>
     </tr>
     </thead>
-    {% for item in publishlist  %}
+    {% for item in publishlist%}
     <form method="POST" action="mks/">{% csrf_token %}
     <tr>
         <td><input type="text" name="coursename" value="{{ item.coursename }}" readonly="true"> </td>

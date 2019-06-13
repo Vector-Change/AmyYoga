@@ -27,14 +27,14 @@
         <th>时段</th>
         <th>预约人数</th>
         <th>最大人数</th>
-        <th>价格/人</th>
+        <th>价格</th>
         <!--<th>预计收入</th>-->
-        <th>操作</th>
+        <!--<th>操作</th>-->
     </tr>
     </thead>
 
     <!--对应每一条记录建立一个新form-->
-    {% for item in validpublish%}
+    {% for item in allpublish%}
     <form method="POST" action="mks/">
         {% csrf_token %}
     <div>
@@ -49,16 +49,16 @@
         <td><!--时段-->
             <input type="text" name="booktime" value="{{ item.booktime }}" readonly="true">
         </td>
-        <td><!--预约人数-->
+        <td><!--预约人数 待更改-->
             <input type="text" name="bookednumber" value="{{ item.nownumber }}" readonly="true">
         </td>
-        <td><!--最大人数-->
+        <td><!--最大人数 待更改-->
             <input type="text" name="maxnumber" value="{{ item.customernumber }}" readonly="true">
         </td>
         <td><!--课程价格 待更改-->80</td>
         <!--<td>&lt;!&ndash;预计收入 待更改&ndash;&gt;100</td>-->
-        <td><!--操作-->
-            <input type="submit" name="delete" value="删除"></td>
+        <!--<td>&lt;!&ndash;操作&ndash;&gt;-->
+            <!--<input type="submit" name="delete" value="删除"></td>-->
     </tr>
     </div>
     </form>

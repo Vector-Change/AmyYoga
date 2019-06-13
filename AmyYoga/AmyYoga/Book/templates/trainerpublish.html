@@ -9,14 +9,15 @@
 </head>
 <body>
 <br>
-{{ trainername }},我永远喜欢蓝忘机！
+{{ trainername }},
 <br>
 
 <a href="/book/trainerpublish/">发布新时间</a>
-<a href="/book/trainerpublished/">已发布时间</a>
+<a href="/book/trainerpublished/">未执行发布</a>
+<a href="/book/trainerpublishedall/">全部发布</a>
 <br>
 <form id="newpublish" action="" method="POST" >{% csrf_token %}
-日期<input type="text" name="date" value="20190610" size="20">
+日期<input type="text" name="date" value="{{nowdate}}" size="20">
 <br>
 课程<select name="coursename">
         {% for item in allcourse %}

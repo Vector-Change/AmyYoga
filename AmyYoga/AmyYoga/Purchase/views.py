@@ -121,6 +121,7 @@ def makebuycourse(request):
             username = temp.cleaned_data.get('username')
             coursename = temp.cleaned_data.get('coursename')
             counttemp = temp.cleaned_data.get('amount')
+            remarks = request.POST.get('remarks')#备注
             course = Course.objects.get(coursename=coursename)
             idtemp=BuyRecord.objects.order_by('-number')
             numbertemp=idtemp[0].getNumber()+1
@@ -130,6 +131,7 @@ def makebuycourse(request):
             p.coursename = course.getCourseName()
             p.amount = counttemp
             p.price = course.getCoursePrice()*counttemp
+            p.remarks = remarks
             p.setPayFlag(False)
             Authority = 'Admin'
             localflag = 'Flase'

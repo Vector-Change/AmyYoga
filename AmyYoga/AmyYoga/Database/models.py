@@ -162,6 +162,7 @@ class Course(models.Model):  # 课程信息
     coursename = models.CharField(primary_key=True, max_length=20)  # 课程名
     courseintroduction = models.CharField(max_length=100, default="")  # 课程介绍
     courseprice = models.IntegerField(default=0)  # 课程价格
+    #coursepricepertime = models.CharField(max_length=5)
     course_flag = models.BooleanField(default=True)  # 标记课程是否在使用
 
     def setCourseName(self, p):
@@ -209,6 +210,13 @@ class BuyRecord(models.Model):
     price = models.IntegerField(default=0)         #表示订单的总金额
     pay_flag = models.BooleanField(default=False)  # 标记是否付钱的订单
     valid = models.BooleanField(default=True)  # 标记是否为取消的订单
+    remarks = models.CharField(max_length=50, default='')#订单备注
+    def getRemarks(self):
+        return self.remarks
+
+    def setRemarks(self, p):
+        self.remarks = p
+        self.save()
 
     def getNumber(self):
         return self.number
@@ -282,8 +290,19 @@ class TrainerPublish(models.Model):  # 发布空闲时间段
     booktime=models.CharField(max_length=20)#空闲时段
     coursename = models.CharField(max_length=20)#课程名
     customernumber=models.CharField(max_length=20)#人数限制
-    nownumber=models.CharField(max_length=20)#当前人数
+    nownumber=models.CharField(max_length=20,default='0')#当前人数
+    pastflag=models.BooleanField(default=False)#是否过期
     # time=models.DateTimeField(auto_now=True, default=False)
+    def setNowNumber(self, p):
+        self.nownumber = p
+        self.save()
+    def getNowNumber(self):
+        return self.nownumber
+    def setPastflag(self, p):
+        self.pastflag = p
+        self.save()
+    def getPastflag(self):
+        return self.pastflag
 
 class BookRecord(models.Model):  # 预约记录
     timeid = models.CharField(primary_key=True, max_length=50)
@@ -293,4 +312,10 @@ class BookRecord(models.Model):  # 预约记录
     booktime=models.CharField(max_length=20)
     coursename = models.CharField(max_length=20)
     trainerprice=models.CharField(max_length=20)
+    pastflag=models.BooleanField(default=False)
+    def setPastflag(self, p):
+        self.pastflag = p
+        self.save()
+    def getPastflag(self):
+        return self.pastflag
     # time=models.DateTimeField(auto_now=True, default=False)

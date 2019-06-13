@@ -2,7 +2,7 @@
 {% block title %}查看购买记录{% endblock %}
 
 {% block content2 %}<!--页面右边部分，存放页面功能对应的界面-->
-<table id = 'tablelist' border="3" align="center" >
+<table id = 'tablelist' border="2" align="center" >
     <caption>购买记录</caption>
     <thead>
     <tr>
@@ -13,6 +13,7 @@
         <th>金 额</th>
         <th>课程数</th>
         <th>支付状态</th>
+        <th>备   注</th>
         {% if localflag == 'False' %}
         <th>订单状态</th>
         <th>操   作</th>
@@ -33,17 +34,20 @@
             <td>
                 {{ item.coursename }}
             </td>
-             <td>
+            <td>
                {{ item.time }}
             </td>
             <td>
                {{ item.price }}
             </td>
-             <td>
+            <td>
                 {{ item.amount }}
             </td>
-             <td>
+            <td>
                 {{ item.pay_flag }}
+            </td>
+            <td>
+                {{ item.remarks }}
             </td>
         </tr>
         </div>
@@ -78,6 +82,9 @@
             </td>
              <td>
                 {{ item.pay_flag }}
+            </td>
+            <td>
+                {{ item.remarks }}
             </td>
             {% if item.pay_flag == False and item.valid == True %}
             <td>

@@ -32,7 +32,8 @@
 <div class="cus_bottom">
     <p>已支付的课程信息</p>
     {% if order%}
-    <table>
+    <table border="1" align="center">
+        <thead>
         <tr>
             <th>序号</th>
             <th>订单号</th>
@@ -40,7 +41,9 @@
             <th>数量</th>
             <th>金额</th>
             <th>下单时间</th>
+            <th>备注</th>
         </tr>
+        </thead>
          {% for i in order %}
         <tr>
             <td>{{ forloop.counter }}</td>
@@ -49,6 +52,7 @@
             <td>{{ i.amount }}</td>
              <td>{{ i.price }}</td>
             <td>{{ i.time }}</td>
+            <td>{{ i.remarks }}</td>
         </tr>
         {% endfor %}
     </table>

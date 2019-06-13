@@ -13,7 +13,7 @@
 <a href="/book/customerbookedall/">所有预约</a>
 <br>
 <body>
-    {{username}}，云深不知处<br>
+
    <table border="2" align="center" width=80%>
     <caption>预约表</caption>
     <br>
@@ -25,12 +25,12 @@
         <th>时段</th>
         <!--<th>预约人数</th>-->
         <!--<th>最大人数</th>-->
-        <th>操作</th>
+        <!--<th>操作</th>-->
     </tr>
     </thead>
 
     <!--对应每一条记录建立一个新form-->
-    {% for item in validbook%}
+    {% for item in allbook%}
     <form method="POST" action="mks/">
         {% csrf_token %}
     <div>
@@ -50,9 +50,8 @@
         </td>
         <!--<td>&lt;!&ndash;预约人数 待更改&ndash;&gt;2</td>-->
         <!--<td>&lt;!&ndash;最大人数 待更改&ndash;&gt;5</td>-->
-        <td><!--操作-->
-            <input type="submit" name="delete" value="删除">
-        </td>
+        <!--<td>&lt;!&ndash;操作&ndash;&gt;-->
+            <!--<input type="submit" name="delete" value="删除"></td>-->
     </tr>
     </div>
     </form>
