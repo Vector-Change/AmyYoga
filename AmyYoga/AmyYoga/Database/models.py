@@ -319,3 +319,24 @@ class BookRecord(models.Model):  # 预约记录
     def getPastflag(self):
         return self.pastflag
     # time=models.DateTimeField(auto_now=True, default=False)
+
+class FinanceRecord(models.Model):
+    timeid=models.CharField(primary_key=True, max_length=50)
+    date=models.CharField(max_length=10,default='')
+    number=models.CharField(max_length=10,default='')
+    remarks=models.CharField(max_length=50,default='')
+    def setTimeid(self, p):
+        self.timeid = p
+        self.save()
+    def getTimeid(self):
+        return self.timeid
+    def setNumber(self, p):
+        self.number = p
+        self.save()
+    def getNumber(self):
+        return self.number
+    def setRemarks(self, p):
+        self.remarks = p
+        self.save()
+    def getRemarks(self):
+        return self.remarks

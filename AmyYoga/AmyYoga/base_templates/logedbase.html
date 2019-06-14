@@ -66,15 +66,14 @@
     {% if  Authority == 'Admin' %}
     <p>
         {% load static %}
-        <a href="/book/manager/"><img width="50" height="50" src="{% static 'myclass.jpg' %}"></a>
-        <br><a href="/book/manager/"><b>预约课表</b></a>
+        <a href="/book/manager/"><img width="30" height="30" src="{% static 'myclass.jpg' %}"></a>
+        <a href="/book/manager/"><b>预约课表</b></a>
     </p>
     <p>
         {% load static %}
         <a href="/PersonalInformation/admin/">
-            <img width="50" height="50" src="{% static 'myclass.jpg' %}">
+            <img width="30" height="30" src="{% static 'myclass.jpg' %}">
         </a>
-        <br>
         <a href="/PersonalInformation/admin/">
             <b>会员资料</b>
         </a>
@@ -82,9 +81,8 @@
     <p>
         {% load static %}
         <a href="/course/view/">
-            <img width="50" height="50" src="{% static 'mybody.jpg' %}">
+            <img width="30" height="30" src="{% static 'mybody.jpg' %}">
         </a>
-        <br>
         <a href="/course/view/">
             <b>课程信息</b>
         </a>
@@ -92,9 +90,8 @@
     <p>
         {% load static %}
         <a href="/purchase/scene/">
-            <img width="50" height="50" src="{% static 'myinformation.jpg' %}">
+            <img width="30" height="30" src="{% static 'myinformation.jpg' %}">
         </a>
-        <br>
         <a href="/purchase/scene/">
             <b>现场购课</b>
         </a>
@@ -102,17 +99,21 @@
     <p>
         {% load static %}
         <a href="/purchase/manage/">
-            <img width="50" height="50" src="{% static 'myinformation.jpg' %}">
+            <img width="30" height="30" src="{% static 'myinformation.jpg' %}">
         </a>
-        <br>
         <a href="/purchase/manage/">
             <b>客户订单</b>
         </a>
     </p>
     <p>
         {% load static %}
-        <a href="/courseused/manager/"><img width="50" height="50" src="{% static 'myinformation.jpg' %}"></a>
-        <br><a href="/courseused/manager/"><b>上课记录</b></a>
+        <a href="/courseused/manager/"><img width="30" height="30" src="{% static 'myinformation.jpg' %}"></a>
+        <a href="/courseused/manager/"><b>上课记录</b></a>
+    </p>
+    <p>
+        {% load static %}
+        <a href="/finance/addrecord/"><img width="30" height="30" src="{% static 'myinformation.jpg' %}"></a>
+        <a href="/finance/addrecord/"><b>财政收入</b></a>
     </p>
 
     {% elif Authority == 'Customer' %}

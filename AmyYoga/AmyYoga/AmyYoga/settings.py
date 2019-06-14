@@ -46,7 +46,8 @@ INSTALLED_APPS = [
     'About',
     'Purchase',
     'CourseUsed',
-    'Book'
+    'Book',
+    'Finance'
 ]
 
 MIDDLEWARE = [

@@ -33,4 +33,5 @@ urlpatterns = [
     path('purchase/', include('Purchase.urls')),
     path('courseused/',include('CourseUsed.urls')),
     path('book/',include('Book.urls')),
+    path('finance/',include('Finance.urls')),
 ]

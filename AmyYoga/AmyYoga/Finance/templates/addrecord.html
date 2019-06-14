@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+{% extends 'logedbase.html' %}
+{% block title %}上课次数{% endblock %}
+{% block content2 %}<!--页面右边部分，存放页面功能对应的界面-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form id="addrecord" method="POST" >{% csrf_token %}
+        <br>
+        收入/支出：<input type="number" name="pay" value="1000" size="15">
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        备注：<input type="text" name="remarks" size="15">
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="submit" name="newlyRecord" value="新建记录">
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="submit" name="allRecord" value="全部记录">
+    </form>
+<br>
+<table border="2" align="center" width=80%>
+    <thead>
+    <tr>
+        <td>日期</td>
+        <td>金额</td>
+        <td>备注</td>
+    </tr>
+    </thead>
+    {% for item in allrecord  %}
+    <tr>
+        <td>{{ item.date }} </td>
+        <td>{{ item.number }}</td>
+        <td>{{ item.remarks }}</td>
+        <!--
+        <td><a href="{{item.username}}">
+            {{ item.username }}</a></td>
+        <td><a href="{{item.coursename}}">
+            {{ item.coursename }}</a></td>
+        -->
+    </tr>
+    {% endfor %}
+    <tr><td>&nbsp;</td><td></td><td></td></tr>
+    <tr>
+    <td>总收入</td>
+    <td>{{ profit }}</td>
+    <td>{{ flag }}</td>
+    </tr>
+</table>
+</body>
+</html>
+{% endblock %}
